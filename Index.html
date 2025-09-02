@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Start Survey</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #f9f9f9;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h2>Welcome to the Study</h2>
+  <p>Click below to begin the survey. Timing will start automatically.</p>
+  <button onclick="startSurvey()">Start Survey</button>
+
+  <script>
+    function startSurvey() {
+      // Current timestamp in ISO format
+      const startTime = new Date().toISOString();
+
+      // Your Google Form URL with Sub Time field prefill
+      const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScOM-hgFTKMeo4ppOncesAqmQGK7FGJjNOOQekjyI8TV_wwUA/viewform?usp=pp_url&entry.925568435=" 
+                      + encodeURIComponent(startTime);
+
+      // Redirect participant to form
+      window.location.href = formURL;
+    }
+  </script>
+</body>
+</html>
+
